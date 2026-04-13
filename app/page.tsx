@@ -1,104 +1,161 @@
 export default function Home() {
   const services = ["Plumbing", "Drain Cleaning", "Emergency Plumbing"]
-  const bookingLink = process.env.GOOGLE_CALENDAR_BOOKING_LINK || '#book'
+  const calendarLink = process.env.GOOGLE_CALENDAR_BOOKING_LINK || "#book"
 
   return (
-    <main className="min-h-screen">
-      {/* Hero */}
-      <section
-        style={{ background: 'linear-gradient(135deg, #2563eb 0%, #f59e0b 100%)' }}
-        className="text-white py-24 px-6 text-center"
-      >
-        <h1 className="text-5xl font-bold mb-4">Birmingham Plumbing and Drainworks</h1>
-        <p className="text-xl mb-8 opacity-90">Reliable plumbing and drain solutions in Birmingham, Alabama</p>
-        <p className="text-lg mb-6 opacity-80">(205) 862-8351 &mdash; Birmingham, AL</p>
-        <a
-          href="#widget"
-          className="inline-block bg-white font-bold px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
-          style={{ color: '#2563eb' }}
-        >
-          Try AI Receptionist
-        </a>
+    <main style={{ minHeight: '100vh', background: '#0f172a', color: '#f8fafc' }}>
+      <section style={{
+        background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e3a8a 100%)',
+        padding: '80px 24px',
+        textAlign: 'center',
+      }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <div style={{
+            display: 'inline-block',
+            background: 'rgba(245, 158, 11, 0.15)',
+            border: '1px solid rgba(245, 158, 11, 0.3)',
+            borderRadius: 9999,
+            padding: '6px 16px',
+            fontSize: 14,
+            color: '#f59e0b',
+            marginBottom: 24,
+          }}>
+            Birmingham, AL · Plumbing & Drain Specialists
+          </div>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, marginBottom: 16, lineHeight: 1.1 }}>
+            Birmingham Plumbing and Drainworks
+          </h1>
+          <p style={{ fontSize: '1.2rem', color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
+            Reliable plumbing and drain solutions in Birmingham, Alabama
+          </p>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="#widget" style={{
+              background: '#f59e0b',
+              color: 'white',
+              padding: '14px 32px',
+              borderRadius: 12,
+              fontWeight: 700,
+              fontSize: '1rem',
+              textDecoration: 'none',
+              display: 'inline-block',
+            }}>
+              Try AI Receptionist
+            </a>
+            <a href="tel:+12058628351" style={{
+              background: 'rgba(255,255,255,0.1)',
+              color: 'white',
+              padding: '14px 32px',
+              borderRadius: 12,
+              fontWeight: 700,
+              fontSize: '1rem',
+              textDecoration: 'none',
+              display: 'inline-block',
+              border: '1px solid rgba(255,255,255,0.2)',
+            }}>
+              Call (205) 862-8351
+            </a>
+          </div>
+        </div>
       </section>
 
-      {/* Widget */}
-      <section id="widget" className="py-16 px-6 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: '#2563eb' }}>
-            AI Voice Receptionist
-          </h2>
+      <section id="widget" style={{ padding: '80px 24px', background: '#0f172a' }}>
+        <div style={{ maxWidth: 600, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 12 }}>Talk to Our AI Receptionist</h2>
+          <p style={{ color: '#94a3b8', marginBottom: 32 }}>
+            Available 24/7 to answer your plumbing questions instantly
+          </p>
           <iframe
             src="/widget.html"
             title="AI Voice Receptionist"
             width="100%"
             height="600"
-            style={{ border: 'none', borderRadius: '12px' }}
+            style={{ border: 'none', borderRadius: 12 }}
           />
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#2563eb' }}>
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section style={{ padding: '80px 24px', background: '#0c1426' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 12 }}>Our Services</h2>
+          <p style={{ color: '#94a3b8', marginBottom: 48 }}>
+            Comprehensive plumbing solutions across Birmingham, AL
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
             {services.map((service) => (
-              <div
-                key={service}
-                className="bg-white rounded-2xl shadow-md p-8 text-center hover:shadow-lg transition"
-              >
-                <div
-                  className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-                  style={{ background: '#2563eb' }}
-                >
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold">{service}</h3>
+              <div key={service} style={{
+                background: '#132f4c',
+                border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: 16,
+                padding: 32,
+                textAlign: 'center',
+              }}>
+                <div style={{
+                  width: 48, height: 48,
+                  background: 'rgba(37, 99, 235, 0.2)',
+                  borderRadius: 12,
+                  margin: '0 auto 16px',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: 24,
+                }}>🔧</div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#f8fafc' }}>{service}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AI Features */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#2563eb' }}>
-            Why an AI receptionist?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section style={{ padding: '80px 24px', background: '#0f172a' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 12 }}>Why an AI Receptionist?</h2>
+          <p style={{ color: '#94a3b8', marginBottom: 48 }}>
+            Never miss a customer enquiry - even at 2am
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {[
-              { title: '24/7 Availability', desc: 'Never miss a lead - our AI answers calls day and night, even on holidays.' },
-              { title: 'Instant Booking', desc: 'Customers book appointments instantly without waiting on hold.' },
-              { title: 'Never Miss a Call', desc: 'Every inquiry is captured and responded to immediately.' },
-            ].map((feature) => (
-              <div key={feature.title} className="bg-white rounded-2xl shadow-md p-8 text-center">
-                <h3 className="text-xl font-semibold mb-3" style={{ color: '#f59e0b' }}>{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
+              { icon: '🕐', title: '24/7 Availability', desc: 'Your AI receptionist never sleeps. Answer calls and book jobs around the clock.' },
+              { icon: '📅', title: 'Instant Booking', desc: 'Customers can book jobs instantly without waiting on hold or leaving voicemails.' },
+              { icon: '📞', title: 'Never Miss a Call', desc: 'Every enquiry gets a professional response, every time - no more lost leads.' },
+            ].map((f) => (
+              <div key={f.title} style={{
+                background: '#132f4c',
+                border: '1px solid rgba(37, 99, 235, 0.3)',
+                borderRadius: 16,
+                padding: 32,
+              }}>
+                <div style={{ fontSize: 40, marginBottom: 16 }}>{f.icon}</div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 8 }}>{f.title}</h3>
+                <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 text-center" style={{ background: '#2563eb' }}>
-        <h2 className="text-3xl font-bold text-white mb-4">Ready to transform your business?</h2>
-        <p className="text-white opacity-80 mb-8 text-lg">
-          Book a demo call with Birmingham Plumbing and Drainworks today.
-        </p>
-        <a
-          href={bookingLink}
-          className="inline-block bg-white font-bold px-10 py-4 rounded-full text-lg hover:opacity-90 transition"
-          style={{ color: '#2563eb' }}
-        >
-          Book a Demo Call
-        </a>
+      <section style={{
+        padding: '80px 24px',
+        background: 'linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%)',
+        textAlign: 'center',
+      }}>
+        <div style={{ maxWidth: 600, margin: '0 auto' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 16 }}>
+            Ready to grow your plumbing business?
+          </h2>
+          <p style={{ color: '#bfdbfe', marginBottom: 32, lineHeight: 1.6 }}>
+            Book a free demo call and see how an AI receptionist can transform your business.
+          </p>
+          <a href={calendarLink} style={{
+            background: '#f59e0b',
+            color: 'white',
+            padding: '16px 40px',
+            borderRadius: 12,
+            fontWeight: 700,
+            fontSize: '1.1rem',
+            textDecoration: 'none',
+            display: 'inline-block',
+          }}>
+            Book a Demo Call
+          </a>
+        </div>
       </section>
     </main>
   )

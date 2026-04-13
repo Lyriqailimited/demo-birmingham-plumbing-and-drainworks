@@ -32,7 +32,7 @@ export default function Home() {
             title="AI Voice Receptionist"
             width="100%"
             height="600"
-            style={{{{ border: 'none', borderRadius: '12px' }}}}
+            style={{ border: 'none', borderRadius: '12px' }}
           />
         </div>
       </section>
@@ -76,10 +76,10 @@ export default function Home() {
               { title: '24/7 Availability', desc: 'Never miss a lead - our AI answers calls day and night, even on holidays.' },
               { title: 'Instant Booking', desc: 'Customers book appointments instantly without waiting on hold.' },
               { title: 'Never Miss a Call', desc: 'Every inquiry is captured and responded to immediately.' },
-            ].map((f) => (
-              <div key={f.title} className="bg-white rounded-2xl shadow-md p-8 text-center">
-                <h3 className="text-xl font-semibold mb-3" style={{ color: '#f59e0b' }}>{f.title}</h3>
-                <p className="text-gray-600">{f.desc}</p>
+            ].map((feature) => (
+              <div key={feature.title} className="bg-white rounded-2xl shadow-md p-8 text-center">
+                <h3 className="text-xl font-semibold mb-3" style={{ color: '#f59e0b' }}>{feature.title}</h3>
+                <p className="text-gray-600">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -89,7 +89,9 @@ export default function Home() {
       {/* CTA */}
       <section className="py-20 px-6 text-center" style={{ background: '#2563eb' }}>
         <h2 className="text-3xl font-bold text-white mb-4">Ready to transform your business?</h2>
-        <p className="text-white opacity-80 mb-8 text-lg">Book a demo call with Birmingham Plumbing and Drainworks today.</p>
+        <p className="text-white opacity-80 mb-8 text-lg">
+          Book a demo call with Birmingham Plumbing and Drainworks today.
+        </p>
         <a
           href={bookingLink}
           className="inline-block bg-white font-bold px-10 py-4 rounded-full text-lg hover:opacity-90 transition"
